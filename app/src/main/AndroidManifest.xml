@@ -14,9 +14,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".searchgroup"
-            android:label="@string/title_activity_searchgroup"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Create_hunt"
+            android:label="@string/title_activity_create_hunt"></activity>
     </application>
 
 </manifest>
