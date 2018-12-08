@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:text="Surname"
         app:layout_constraintStart_toStartOf="@+id/signUpName"
         app:layout_constraintTop_toBottomOf="@+id/signUpName" />
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="textPersonName"
         android:text="Username"
         app:layout_constraintStart_toStartOf="@+id/signUpSurname"
         app:layout_constraintTop_toBottomOf="@+id/signUpSurname" />

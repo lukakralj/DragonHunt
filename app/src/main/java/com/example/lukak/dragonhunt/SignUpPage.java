@@ -3,6 +3,7 @@ package com.example.lukak.dragonhunt;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,7 +80,7 @@ public class SignUpPage extends AppCompatActivity {
         }
         String message = "";
         if (allValid) {
-            message = createNewUser();
+            createNewUser();
         }
         else {
             message = "Please fill all the fields. Username must be at least 5 characters long, and password at least 8.";
@@ -87,24 +88,18 @@ public class SignUpPage extends AppCompatActivity {
         mTextMessage.setText(message);
     }
 
-    private String createNewUser() {
-        NewUserRequest newUser = new NewUserRequest();
+    private void createNewUser() {
+        NewUserRequest newUser = new NewUserRequest(this);
         newUser.setName(nameInput.getText().toString().trim());
         newUser.setSurname(surnameInput.getText().toString().trim());
         newUser.setUsername(usernameInput.getText().toString().trim());
         newUser.setPassword(passwordInput.getText().toString().trim());
 
-        if (newUser.issueRequest()) {
-            if (newUser.wasSuccessful()) {
-                return "Registration succesful.";
-            }
-            else {
-                return newUser.getMessage();
-            }
-        }
-        else {
-            return "Exception thrown.";
-        }
+        newUser.execute("");
+    }
+
+    public void setMessage(String message) {
+        mTextMessage.setText(message);
     }
 
 }

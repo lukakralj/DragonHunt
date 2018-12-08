@@ -1,20 +1,25 @@
 package com.example.lukak.dragonhunt.backend;
 
+import android.app.Activity;
+import android.os.AsyncTask;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HttpRequest {
+public class HttpRequest extends AsyncTask<String, Void, String> {
 
+    protected Activity activity;
     protected String url;
     protected Map<String, String> parameters;
     protected JSONObject response;
     protected boolean wasSuccessful;
     protected String message;
 
-    public HttpRequest() {
+    public HttpRequest(Activity activity) {
+        this.activity = activity;
         parameters = new HashMap<>();
         wasSuccessful = false;
     }
@@ -28,8 +33,11 @@ public class HttpRequest {
             String responseJSON = DatabaseManager.getResponseJSON(url, DatabaseManager.createParameters(parameters));
 
             response = new JSONObject(responseJSON);
-            wasSuccessful = response.get("success").equals("1");
+            System.out.println("====== Response: " + response);
+            wasSuccessful = response.getInt("success") == 1;
+            System.out.println("====== wasSuccessful: " + wasSuccessful);
             message = (String) response.get("message");
+            System.out.println("====== Message: " + message);
         }
         catch (IOException | JSONException e) {
             return false;
@@ -44,5 +52,23 @@ public class HttpRequest {
     public String getMessage() {
         return message;
     }
+
+    @Override
+    protected String doInBackground(String... strings) {
+        issueRequest();
+
+        return "Executed";
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+
+    }
+
+    @Override
+    protected void onPreExecute() {}
+
+    @Override
+    protected void onProgressUpdate(Void... values) {}
 
 }
