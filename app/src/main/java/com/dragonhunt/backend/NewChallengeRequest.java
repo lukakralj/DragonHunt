@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt.backend;
+package com.dragonhunt.backend;
 
 import android.app.Activity;
 

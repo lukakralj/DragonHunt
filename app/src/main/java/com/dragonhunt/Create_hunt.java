@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import android.location.Location;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.example.lukak.dragonhunt.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;

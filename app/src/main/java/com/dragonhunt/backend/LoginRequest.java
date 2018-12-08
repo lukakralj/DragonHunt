@@ -1,14 +1,14 @@
-package com.example.lukak.dragonhunt.backend;
+package com.dragonhunt.backend;
 
 import android.app.Activity;
 
-import com.example.lukak.dragonhunt.SignUpPage;
+import com.dragonhunt.SignUpPage;
 
-public class NewUserRequest extends HttpRequest {
+public class LoginRequest extends HttpRequest {
 
-    public NewUserRequest(Activity activity) {
+    public LoginRequest(Activity activity) {
         super(activity);
-        url = DatabaseManager.NEW_USER_URL;
+        url = DatabaseManager.LOGIN_URL;
     }
 
     public void setUsername(String username) {
@@ -17,14 +17,6 @@ public class NewUserRequest extends HttpRequest {
 
     public void setPassword(String password) {
         parameters.put("password", password);
-    }
-
-    public void setName(String name) {
-        parameters.put("name", name);
-    }
-
-    public void setSurname(String surname) {
-        parameters.put("surname", surname);
     }
 
     @Override
@@ -44,6 +36,5 @@ public class NewUserRequest extends HttpRequest {
             ((SignUpPage)activity).setMessage(getMessage());
         }
     }
-
 
 }
