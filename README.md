@@ -11,7 +11,7 @@ Dissapointed your challenges aren't doing as well as you expected? Having troubl
 edition now and gain access to 1 daily boost which will send you challenge to the top of the search results for an hour and 10 daily clues
 which will give you location hints for exisiting challenges, giving your team a head-start in every challenge.
 
-## Special Bonus
+## Founders Bonus
 
 Users who sign up withing the first week of the app releasing and login for 7 consecutive days will also earn a shiny new Dragon's badge to
 add to thier profile.
