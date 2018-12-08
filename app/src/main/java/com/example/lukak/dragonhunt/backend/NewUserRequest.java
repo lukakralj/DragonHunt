@@ -1,9 +1,13 @@
 package com.example.lukak.dragonhunt.backend;
 
+import android.app.Activity;
+
+import com.example.lukak.dragonhunt.SignUpPage;
+
 public class NewUserRequest extends HttpRequest {
 
-    public NewUserRequest() {
-        super();
+    public NewUserRequest(Activity activity) {
+        super(activity);
         url = DatabaseManager.NEW_USER_URL;
     }
 
@@ -29,6 +33,16 @@ public class NewUserRequest extends HttpRequest {
             return false;
         }
         return super.issueRequest();
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+        if (wasSuccessful()) {
+            ((SignUpPage)activity).setMessage("Registration successful.");
+        }
+        else {
+            ((SignUpPage)activity).setMessage(getMessage());
+        }
     }
 
 

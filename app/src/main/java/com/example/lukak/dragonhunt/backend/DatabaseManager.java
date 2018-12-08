@@ -1,5 +1,7 @@
 package com.example.lukak.dragonhunt.backend;
 
+import android.os.AsyncTask;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,6 +14,13 @@ public class DatabaseManager {
 
     public static final String NEW_USER_URL = "http://dragonhunt.dx.am/new_user.php";
     public static final String NEW_CHALLENGE_URL = "http://dragonhunt.dx.am/new_challenge.php";
+
+    // Status constants:
+    public static final String QUERY_SUCCESSFUL = "QUERY_SUCCESSFUL";
+    public static final String QUERY_ERROR = "QUERY_ERROR";
+    public static final String INVALID_USERNAME = "INVALID_USERNAME";
+    public static final String MISSING_PARAMETERS = "MISSING_PARAMETERS";
+    public static final String INVALID_REQUEST = "INVALID_REQUEST";
 
     public static String createParameters(Map<String, String> postArguments) {
         StringBuilder builder = new StringBuilder();
@@ -38,7 +47,7 @@ public class DatabaseManager {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer content = new StringBuffer();
+        StringBuilder content = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }

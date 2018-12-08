@@ -1,9 +1,11 @@
 package com.example.lukak.dragonhunt.backend;
 
+import android.app.Activity;
+
 public class NewChallengeRequest extends HttpRequest {
 
-    public NewChallengeRequest() {
-        super();
+    public NewChallengeRequest(Activity activity) {
+        super(activity);
         url = DatabaseManager.NEW_CHALLENGE_URL;
     }
 
