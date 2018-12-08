@@ -3,7 +3,7 @@
     package="com.example.lukak.dragonhunt">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,19 +18,21 @@
         <activity
             android:name=".Create_hunt"
             android:label="@string/title_activity_create_hunt">
-        </activity>
-        <activity
-            android:name=".SignUpPage"
-            android:label="@string/title_activity_sign_up_page" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".SignUpPage"
+            android:label="@string/title_activity_sign_up_page" />
+        <activity
             android:name=".LoginPage"
-            android:label="@string/title_activity_login_page"/>
-
+            android:label="@string/title_activity_login_page" />
+        <activity
+            android:name=".join_group"
+            android:label="@string/title_activity_join_group"></activity>
     </application>
 
 </manifest>
