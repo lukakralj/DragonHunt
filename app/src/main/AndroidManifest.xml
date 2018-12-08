@@ -15,7 +15,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Create_hunt"
-            android:label="@string/title_activity_create_hunt"></activity>
+            android:label="@string/title_activity_create_hunt" />
+        <activity
+            android:name=".SignUpPage"
+            android:label="@string/title_activity_sign_up_page" />
+        <activity
+            android:name=".LoginPage"
+            android:label="@string/title_activity_login_page"></activity>
     </application>
 
 </manifest>
