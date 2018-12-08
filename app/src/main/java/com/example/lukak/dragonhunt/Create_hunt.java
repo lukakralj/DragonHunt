@@ -11,7 +11,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -58,7 +57,6 @@ public class Create_hunt extends AppCompatActivity {
         EditText iCode = (EditText)findViewById(R.id.InvCode);
         Switch isPublic = (Switch)findViewById(R.id.Switch);
         com.google.android.gms.maps.MapView map = (com.google.android.gms.maps.MapView)findViewById(R.id.mapView);
-        Location currentLocation = LocationServices.FusedLocationApi.getLastLocation(map);
     }
 
 }
