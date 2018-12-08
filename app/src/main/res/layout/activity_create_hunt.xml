@@ -36,37 +36,27 @@
         android:layout_height="wrap_content"
         android:text="Create Hunt"
         tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="327dp" />
+        tools:layout_editor_absoluteY="385dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Title"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="59dp" />
+        tools:layout_editor_absoluteY="42dp" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="Password (optional)"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="126dp" />
-
-    <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/InvCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="Post Code"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="194dp" />
+        android:text="Invite Code (Optional)"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="159dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -74,14 +64,31 @@
         android:layout_height="20dp"
         android:text="Make Public"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="271dp" />
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="342dp" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/Switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="271dp" />
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <EditText
+        android:id="@+id/Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Description"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="214dp"
+        android:layout_height="96dp"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="222dp" />
 
 </android.support.constraint.ConstraintLayout>
