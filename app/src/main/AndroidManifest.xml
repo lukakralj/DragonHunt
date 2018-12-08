@@ -16,7 +16,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Create_hunt"
-            android:label="@string/title_activity_create_hunt"></activity>
+            android:label="@string/title_activity_create_hunt">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
