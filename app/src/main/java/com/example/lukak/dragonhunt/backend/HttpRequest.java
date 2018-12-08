@@ -1,9 +1,7 @@
 package com.example.lukak.dragonhunt.backend;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +44,5 @@ public class HttpRequest {
     public String getMessage() {
         return message;
     }
-
-
 
 }
