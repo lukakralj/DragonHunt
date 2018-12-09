@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lukak.dragonhunt.com.dragonhunt.UserProfile">
+    tools:context="com.dragonhunt.UserProfile">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -37,4 +37,5 @@
         android:text="Challenge Times"
         tools:layout_editor_absoluteX="38dp"
         tools:layout_editor_absoluteY="307dp" />
+
 </android.support.constraint.ConstraintLayout>
