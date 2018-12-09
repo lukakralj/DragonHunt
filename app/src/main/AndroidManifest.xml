@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".Create_hunt"
-            android:label="@string/title_activity_create_hunt"></activity>
+            android:label="@string/title_activity_create_hunt" />
         <activity
             android:name=".join_group"
             android:label="@string/title_activity_join_group" />
@@ -40,7 +40,8 @@
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login_page" />
-        <activity android:name=".PinCodeDisplay"></activity>
+        <activity android:name=".PinCodeDisplay" />
+        <activity android:name=".ChallengeView"></activity>
     </application>
 
 </manifest>
