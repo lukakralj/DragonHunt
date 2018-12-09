@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dragonhunt.backend.NewChallengeRequest;
-import com.example.lukak.dragonhunt.R;
 
 
 public class Create_hunt extends AppCompatActivity {

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.dragonhunt.backend.NewUserRequest;
-import com.example.lukak.dragonhunt.R;
 
 public class SignUpPage extends AppCompatActivity {
 

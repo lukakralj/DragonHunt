@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dragonhunt.backend.LoginRequest;
-import com.example.lukak.dragonhunt.R;
 
 public class LoginPage extends AppCompatActivity {
 

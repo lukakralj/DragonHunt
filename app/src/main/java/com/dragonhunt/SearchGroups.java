@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.lukak.dragonhunt.R;
-
 import java.util.ArrayList;
 
 public class SearchGroups extends AppCompatActivity {
