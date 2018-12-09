@@ -12,30 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.dragonhunt.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Create_hunt"
-            android:label="@string/title_activity_create_hunt" />
-        <activity
-            android:name=".SignUpPage"
-            android:label="@string/title_activity_sign_up_page" />
-        <activity
-            android:name=".LoginPage"
-            android:label="@string/title_activity_login_page" />
-        <activity
-            android:name=".SearchGroups"
-            android:label="search_my_group_pal">
-        </activity>
-        <activity
-            android:name=".GroupInformation"
-            android:label="Look @ me group">
-            <intent-filter>
+            android:name="com.dragonhunt.Create_hunt"
+            android:label="@string/title_activity_create_hunt">
+            <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.dragonhunt.join_group"
+            android:label="@string/title_activity_join_group" />
+        <activity
+            android:name="com.dragonhunt.GroupInformation"
+            android:label="group info label" />
+        <activity
+            android:name="com.dragonhunt.UserProfile"/>
+        <activity
+            android:name="com.dragonhunt.SearchGroups"
+            android:label="search_my_group_pal" />
+        <activity
+            android:name="com.dragonhunt.SignUpPage"
+            android:label="@string/title_activity_sign_up_page"/>
+        <activity
+            android:name="com.dragonhunt.LoginPage"
+            android:label="@string/title_activity_login_page"/>
+
     </application>
 
 </manifest>
