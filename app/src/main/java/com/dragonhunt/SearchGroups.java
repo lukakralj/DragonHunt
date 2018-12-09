@@ -1,9 +1,11 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.lukak.dragonhunt.R;
 
 import java.util.ArrayList;
 

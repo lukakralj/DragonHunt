@@ -1,12 +1,13 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.lukak.dragonhunt.R;
 
 import java.util.List;
 

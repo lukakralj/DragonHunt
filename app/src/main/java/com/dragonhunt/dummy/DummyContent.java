@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt.dummy;
+package com.dragonhunt.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

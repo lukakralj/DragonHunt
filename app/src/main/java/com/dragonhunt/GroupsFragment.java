@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lukak.dragonhunt.dummy.DummyContent;
-import com.example.lukak.dragonhunt.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import com.example.lukak.dragonhunt.R;
+import com.dragonhunt.dummy.DummyContent;
+import com.dragonhunt.dummy.DummyContent.DummyItem;
 
 /**
  * A fragment representing a list of Items.

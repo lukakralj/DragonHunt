@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.dragonhunt.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
@@ -25,12 +25,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".join_group"
+            android:name="com.dragonhunt.join_group"
             android:label="@string/title_activity_join_group" />
         <activity
-            android:name=".UserProfile"/>
+            android:name="com.dragonhunt.UserProfile"/>
         <activity
-            android:name=".SearchGroups"
+            android:name="com.dragonhunt.SearchGroups"
             android:label="search_my_group_pal" />
         <activity
             android:name="com.dragonhunt.SignUpPage"

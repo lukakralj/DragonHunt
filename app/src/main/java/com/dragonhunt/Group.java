@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,9 @@
-package com.example.lukak.dragonhunt;
+package com.dragonhunt;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.lukak.dragonhunt.R;
 
 public class UserProfile extends AppCompatActivity {
 
