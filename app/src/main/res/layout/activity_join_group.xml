@@ -9,29 +9,20 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_home"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="64dp"
         android:text="Input your group PIN"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/codeInput"
+        app:layout_constraintStart_toStartOf="@+id/codeInput"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/codeInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +33,7 @@
         android:id="@+id/joinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="33dp"
         android:text="OK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
