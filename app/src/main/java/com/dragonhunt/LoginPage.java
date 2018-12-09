@@ -52,8 +52,8 @@ public class LoginPage extends AppCompatActivity {
         usernameInput = (EditText) findViewById(R.id.loginUsername);
         passwordInput = (EditText) findViewById(R.id.loginPassword);
 
-        final Button signUpConfirm = (Button) findViewById(R.id.loginButton);
-        signUpConfirm.setOnClickListener(new View.OnClickListener() {
+        final Button loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 handleLoginButton(v);
             }
@@ -101,6 +101,11 @@ public class LoginPage extends AppCompatActivity {
 
     public void setMessage(String message) {
         mTextMessage.setText(message);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing...
     }
 
 }

@@ -14,6 +14,10 @@
         <activity
             android:name="com.dragonhunt.Create_hunt"
             android:label="@string/title_activity_create_hunt">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.dragonhunt.SignUpPage"
@@ -22,10 +26,6 @@
         <activity
             android:name="com.dragonhunt.LoginPage"
             android:label="@string/title_activity_login_page">
-        <intent-filter >
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
 
     </application>

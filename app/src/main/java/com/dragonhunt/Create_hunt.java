@@ -1,11 +1,16 @@
 package com.dragonhunt;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -24,6 +29,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class Create_hunt extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private EditText title;
+    private EditText description;
+    private EditText location;
+    private EditText minParticipants;
+    private EditText isPrivate;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,6 +57,7 @@ public class Create_hunt extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requireLogin();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_hunt);
 
@@ -54,11 +65,44 @@ public class Create_hunt extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        EditText title = (EditText)findViewById(R.id.Title);
-        EditText desc = (EditText)findViewById(R.id.Description);
-        EditText iCode = (EditText)findViewById(R.id.InvCode);
-        Switch isPublic = (Switch)findViewById(R.id.Switch);
-        com.google.android.gms.maps.MapView map = (com.google.android.gms.maps.MapView)findViewById(R.id.mapView);
+        title = (EditText)findViewById(R.id.Title);
+        description = (EditText)findViewById(R.id.Description);
+        location = (EditText)findViewById(R.id.Location);
+        minParticipants = (EditText) findViewById(R.id.minParticipants);
+        isPrivate = (EditText) findViewById(R.id.isPrivate);
+
+        final Button createHuntButton = (Button) findViewById(R.id.createHunt);
+        createHuntButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("===== Creating hunt.");
+            }
+        });
+
+        final Button logoutButton = (Button) findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("===== Logging out.");
+                SharedPreferences preferences = getSharedPreferences("Settings", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.remove("username");
+                editor.apply();
+                requireLogin();
+            }
+        });
+    }
+
+    private void requireLogin() {
+        SharedPreferences preferences = getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        if (!preferences.contains("username")) {
+            // no user is logged in
+            Intent intent = new Intent(this, LoginPage.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing...
     }
 
 }
