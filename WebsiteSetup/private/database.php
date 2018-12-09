@@ -8,6 +8,7 @@ define(QUERY_ERROR, "QUERY_ERROR");
 define(INVALID_USERNAME, "INVALID_USERNAME");
 define(MISSING_PARAMETERS, "MISSING_PARAMETERS");
 define(INVALID_REQUEST, "INVALID_REQUEST");
+define(INVALID_CREDENTIALS, "INVALID_CREDENTIALS");
 
 // Connect to the database and return the connection to it.
 function db_connect() {
@@ -45,6 +46,7 @@ function confirm_result_set($result_set) {
         $response = [];
         $response["success"] = 0;
         $response["message"] = QUERY_ERROR;
+        echo json_encode($response);
     }
 }
 

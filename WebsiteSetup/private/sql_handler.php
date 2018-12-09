@@ -41,4 +41,24 @@ function insert_new_challenge($title, $task, $location, $owner, $minParticipants
     $result = mysqli_query($db, $sql);
     return $result;
 }
+
+function valid_credentials($username, $password) {
+    global $db;
+
+    $sql = "SELECT hashed_password FROM Users ";
+    $sql .= "WHERE username='" . db_escape($db, $username) . "'";
+
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+
+    if (mysqli_num_rows($result) == 0) {
+        mysqli_free_result($result);
+        return false;
+    }
+
+    $hashed_password = mysqli_fetch_assoc($result)["hashed_password"];
+    mysqli_free_result($result);
+
+    return $hashed_password == $password;
+}
  ?>

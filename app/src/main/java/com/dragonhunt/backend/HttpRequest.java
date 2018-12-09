@@ -1,4 +1,4 @@
-package com.example.lukak.dragonhunt.backend;
+package com.dragonhunt.backend;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -32,6 +32,8 @@ public class HttpRequest extends AsyncTask<String, Void, String> {
         try {
             String responseJSON = DatabaseManager.getResponseJSON(url, DatabaseManager.createParameters(parameters));
 
+            System.out.println("====== Request type: " + this.getClass());
+            System.out.println("====== ResponseJSON: " + responseJSON);
             response = new JSONObject(responseJSON);
             System.out.println("====== Response: " + response);
             wasSuccessful = response.getInt("success") == 1;
@@ -40,6 +42,7 @@ public class HttpRequest extends AsyncTask<String, Void, String> {
             System.out.println("====== Message: " + message);
         }
         catch (IOException | JSONException e) {
+            e.printStackTrace();
             return false;
         }
         return true;

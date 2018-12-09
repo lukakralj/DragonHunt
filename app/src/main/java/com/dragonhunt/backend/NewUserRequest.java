@@ -1,8 +1,10 @@
-package com.example.lukak.dragonhunt.backend;
+package com.dragonhunt.backend;
 
 import android.app.Activity;
+import android.content.Intent;
 
-import com.example.lukak.dragonhunt.SignUpPage;
+import com.dragonhunt.LoginPage;
+import com.dragonhunt.SignUpPage;
 
 public class NewUserRequest extends HttpRequest {
 
@@ -37,7 +39,14 @@ public class NewUserRequest extends HttpRequest {
 
     @Override
     protected void onPostExecute(String result) {
-
+        if (wasSuccessful()) {
+            ((SignUpPage)activity).setMessage("Registration successful.");
+            Intent intent = new Intent(activity, LoginPage.class);
+            activity.startActivity(intent);
+        }
+        else {
+            ((SignUpPage)activity).setMessage(getMessage());
+        }
     }
 
 
