@@ -16,7 +16,7 @@ which will give you location hints for exisiting challenges, giving your team a 
 Users who sign up withing the first week of the app releasing and login for 7 consecutive days will also earn a shiny new Dragon's badge to
 add to thier profile.
 
-##FAQs
+## FAQs
 
 ### How do I claim my bonus?
 
