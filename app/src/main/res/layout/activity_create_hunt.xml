@@ -84,7 +84,7 @@
         android:layout_marginStart="2dp"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="is private? (enter 1/0)"
+        android:text="is private? (true/false)"
         app:layout_constraintBottom_toTopOf="@+id/createHunt"
         app:layout_constraintStart_toStartOf="@+id/minParticipants"
         app:layout_constraintTop_toBottomOf="@+id/minParticipants" />
@@ -95,18 +95,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:text="Create Hunt"
-        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="@+id/isPrivate"
         app:layout_constraintTop_toBottomOf="@+id/isPrivate" />
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toEndOf="@+id/createHunt"
-        app:layout_constraintTop_toBottomOf="@+id/createHunt" />
 
 
 </android.support.constraint.ConstraintLayout>

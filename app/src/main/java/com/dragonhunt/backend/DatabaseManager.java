@@ -1,6 +1,12 @@
 package com.dragonhunt.backend;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+
+import com.dragonhunt.LoginPage;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -60,4 +66,12 @@ public class DatabaseManager {
     }
 
 
+    public static void requireLogin(Activity activity) {
+        SharedPreferences preferences = activity.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        if (!preferences.contains("username")) {
+            // no user is logged in
+            Intent intent = new Intent(activity, LoginPage.class);
+            activity.startActivity(intent);
+        }
+    }
 }

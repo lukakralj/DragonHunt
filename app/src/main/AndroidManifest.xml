@@ -12,36 +12,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.dragonhunt.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name="com.dragonhunt.Create_hunt"
-            android:label="@string/title_activity_create_hunt">
-            <intent-filter >
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dragonhunt.join_group"
+            android:name=".Create_hunt"
+            android:label="@string/title_activity_create_hunt"></activity>
+        <activity
+            android:name=".join_group"
             android:label="@string/title_activity_join_group" />
         <activity
-            android:name="com.dragonhunt.GroupInformation"
+            android:name=".GroupInformation"
             android:label="group info label" />
+        <activity android:name=".UserProfile" />
         <activity
-            android:name="com.dragonhunt.UserProfile"/>
-        <activity
-            android:name="com.dragonhunt.SearchGroups"
+            android:name=".SearchGroups"
             android:label="search_my_group_pal" />
         <activity
-            android:name="com.dragonhunt.SignUpPage"
-            android:label="@string/title_activity_sign_up_page"/>
+            android:name=".SignUpPage"
+            android:label="@string/title_activity_sign_up_page" />
         <activity
-            android:name="com.dragonhunt.LoginPage"
-            android:label="@string/title_activity_login_page"/>
-
+            android:name=".LoginPage"
+            android:label="@string/title_activity_login_page" />
+        <activity android:name=".PinCodeDisplay"></activity>
     </application>
 
 </manifest>

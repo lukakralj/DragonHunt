@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.dragonhunt.backend.DatabaseManager;
+
 
 public class join_group extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class join_group extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DatabaseManager.requireLogin(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_group);
 

@@ -39,6 +39,16 @@ function insert_new_challenge($title, $task, $location, $owner, $minParticipants
                         . db_escape($db, $isPrivate) . "')";
 
     $result = mysqli_query($db, $sql);
+
+    if (!$result) {
+        return $result;
+    }
+
+    $sql = "INSERT INTO OngoingChallenges (challengeId) ";
+    $sql .= "VALUES ('" . db_escape($db, mysqli_insert_id($db)) . "')";
+
+    $result = mysqli_query($db, $sql);
+
     return $result;
 }
 
@@ -60,5 +70,20 @@ function valid_credentials($username, $password) {
     mysqli_free_result($result);
 
     return $hashed_password == $password;
+}
+
+function get_ongoing_challenge_by_id($id) {
+    global $db;
+
+    $sql = "SELECT * FROM OngoingChallenges NATURAL JOIN Challenges ";
+    $sql .= "WHERE id='" . db_escape($db, $id). "'";
+
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+
+    $row = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+
+    return $row;
 }
  ?>

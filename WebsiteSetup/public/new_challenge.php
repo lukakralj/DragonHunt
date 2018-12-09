@@ -25,6 +25,12 @@ if (is_post_request()) {
                                     $_POST["isPrivate"])) {
                 $response["success"] = 1;
                 $response["message"] = QUERY_SUCCESSFUL;
+
+                $id = mysqli_insert_id($db);
+                $last_added = get_ongoing_challenge_by_id($id);
+
+                $response["challenge"] = $last_added;
+
                 echo json_encode($response);
             }
             else {

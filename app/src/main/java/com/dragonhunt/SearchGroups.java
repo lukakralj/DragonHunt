@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.dragonhunt.backend.DatabaseManager;
+
 import java.util.ArrayList;
 
 public class SearchGroups extends AppCompatActivity {
@@ -13,7 +15,7 @@ public class SearchGroups extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        DatabaseManager.requireLogin(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_groups);
 
