@@ -18,23 +18,25 @@
         <activity
             android:name="com.dragonhunt.Create_hunt"
             android:label="@string/title_activity_create_hunt">
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.dragonhunt.join_group"
             android:label="@string/title_activity_join_group" />
         <activity
             android:name="com.dragonhunt.GroupInformation"
-            android:label="group info label" />
+            android:label="group info label" >
+        </activity>
         <activity
             android:name="com.dragonhunt.UserProfile"/>
         <activity
             android:name="com.dragonhunt.SearchGroups"
-            android:label="search_my_group_pal" />
+            android:label="search_my_group_pal" >
+        <intent-filter >
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name="com.dragonhunt.SignUpPage"
             android:label="@string/title_activity_sign_up_page"/>

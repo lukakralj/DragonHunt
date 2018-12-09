@@ -13,37 +13,54 @@
         android:layout_margin="16dp"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
             <TextView
+                android:id="@+id/name1"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:padding="30dp"
-                android:text="GroupName"
+                android:text="DragonSlayers"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold|italic" />
 
             <TextView
-                android:layout_width="250dp"
-                android:layout_height="300dp"
-                android:background="@drawable/testimage6"
+                android:id="@+id/pic1"
+                android:layout_width="192dp"
+                android:layout_height="285dp"
+                android:layout_below="@id/name1"
+                android:background="@drawable/dragon"
                 android:padding="30dp" />
 
+            <TextView
+                android:id="@+id/group_info"
+                android:layout_toRightOf="@id/pic1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:text="@string/styled_stats"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
 
 
         <TextView
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:text="@string/memberlist"
-            android:textSize="30sp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/memberlist"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="5dp"
             android:textSize="30sp"
             android:textColor="@color/white" />
 
