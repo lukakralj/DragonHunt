@@ -2,6 +2,8 @@ package com.dragonhunt.backend;
 
 import android.app.Activity;
 
+import com.dragonhunt.Create_hunt;
+
 public class NewChallengeRequest extends HttpRequest {
 
     public NewChallengeRequest(Activity activity) {
@@ -45,4 +47,13 @@ public class NewChallengeRequest extends HttpRequest {
         return super.issueRequest();
     }
 
+    @Override
+    protected void onPostExecute(String result) {
+        if (wasSuccessful()) {
+            ((Create_hunt)activity).setMessage("Success!");
+        }
+        else {
+            ((Create_hunt)activity).setMessage(getMessage());
+        }
+    }
 }
