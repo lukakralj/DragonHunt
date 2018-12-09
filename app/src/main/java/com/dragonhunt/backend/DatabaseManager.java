@@ -21,6 +21,7 @@ public class DatabaseManager {
     public static final String NEW_USER_URL = "http://dragonhunt.dx.am/new_user.php";
     public static final String NEW_CHALLENGE_URL = "http://dragonhunt.dx.am/new_challenge.php";
     public static final String LOGIN_URL = "http://dragonhunt.dx.am/login.php";
+    public static final String JOIN_URL = "http://dragonhunt.dx.am/join.php";
 
     // Status constants:
     public static final String QUERY_SUCCESSFUL = "QUERY_SUCCESSFUL";
