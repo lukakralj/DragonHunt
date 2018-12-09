@@ -52,7 +52,7 @@ public class LoginPage extends AppCompatActivity {
         usernameInput = (EditText) findViewById(R.id.loginUsername);
         passwordInput = (EditText) findViewById(R.id.loginPassword);
 
-        final Button signUpConfirm = (Button) findViewById(R.id.signUpConfirm);
+        final Button signUpConfirm = (Button) findViewById(R.id.loginButton);
         signUpConfirm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 handleLoginButton(v);
@@ -94,7 +94,7 @@ public class LoginPage extends AppCompatActivity {
     private void loginUser() {
         LoginRequest loginRequest = new LoginRequest(this);
         loginRequest.setUsername(usernameInput.getText().toString().trim());
-        loginRequest.setPassword(passwordInput.getText().toString().trim());
+        loginRequest.setPassword(passwordInput.getText().toString());
 
         loginRequest.execute("");
     }

@@ -46,6 +46,7 @@ function confirm_result_set($result_set) {
         $response = [];
         $response["success"] = 0;
         $response["message"] = QUERY_ERROR;
+        echo json_encode($response);
     }
 }
 

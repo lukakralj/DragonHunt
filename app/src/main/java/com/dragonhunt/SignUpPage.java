@@ -92,7 +92,7 @@ public class SignUpPage extends AppCompatActivity {
         newUser.setName(nameInput.getText().toString().trim());
         newUser.setSurname(surnameInput.getText().toString().trim());
         newUser.setUsername(usernameInput.getText().toString().trim());
-        newUser.setPassword(passwordInput.getText().toString().trim());
+        newUser.setPassword(passwordInput.getText().toString());
 
         newUser.execute("");
     }

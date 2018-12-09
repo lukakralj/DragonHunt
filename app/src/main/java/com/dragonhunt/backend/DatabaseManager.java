@@ -15,6 +15,7 @@ public class DatabaseManager {
     public static final String NEW_USER_URL = "http://dragonhunt.dx.am/new_user.php";
     public static final String NEW_CHALLENGE_URL = "http://dragonhunt.dx.am/new_challenge.php";
     public static final String LOGIN_URL = "http://dragonhunt.dx.am/login.php";
+
     // Status constants:
     public static final String QUERY_SUCCESSFUL = "QUERY_SUCCESSFUL";
     public static final String QUERY_ERROR = "QUERY_ERROR";
@@ -31,7 +32,7 @@ public class DatabaseManager {
             builder.append(postArguments.get(key));
             builder.append("&");
         }
-        return builder.substring(0, builder.length() - 2); // remove final &
+        return builder.substring(0, builder.length() - 1); // remove final &
     }
 
     public static String getResponseJSON(String url, String parameters) throws IOException {
@@ -55,7 +56,6 @@ public class DatabaseManager {
         in.close();
 
         con.disconnect();
-
         return content.toString();
     }
 
