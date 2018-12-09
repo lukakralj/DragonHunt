@@ -1,6 +1,7 @@
 package com.example.lukak.dragonhunt;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,8 +62,11 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.ViewHolder
         Group group = mGroups.get(position);
 
         // Set item views based on your views and data model
-        TextView textView = viewHolder.nameTextView;
-        textView.setText(group.getName());
+        TextView textView1 = viewHolder.nameTextView;
+        textView1.setText(group.getName());
+        TextView textView2 = viewHolder.statTextView;
+        textView2.setText("Completed Challenges\n\t\t\t\t"+ group.getNumComplete() +"\nActive Members\n\t\t\t\t"+ group.getActive() +"/" + group.getRequired()+"\nDistance\n\t\t\t\t" + group.getDistance());
+        textView1.setBackgroundResource(R.drawable.testimage2);
     }
 
     // Returns the total count of items in the list
