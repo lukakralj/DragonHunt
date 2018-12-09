@@ -37,12 +37,7 @@ public class NewUserRequest extends HttpRequest {
 
     @Override
     protected void onPostExecute(String result) {
-        if (wasSuccessful()) {
-            ((SignUpPage)activity).setMessage("Registration successful.");
-        }
-        else {
-            ((SignUpPage)activity).setMessage(getMessage());
-        }
+
     }
 
 

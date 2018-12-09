@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,29 +28,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button search_btn = (Button) findViewById(R.id.button4);
+        Button search_btn = (Button) findViewById(R.id.search_button);
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, searchgroup.class));
+                startActivity(new Intent(MainActivity.this, SearchGroups.class));
             }
         });
-
-        Button challenge_btn = (Button) findViewById(R.id.button6);
-        search_btn.setOnClickListener(new View.OnClickListener() {
+        Button challenge_btn = (Button) findViewById(R.id.create_button);
+        challenge_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Create_hunt.class));
             }
         });
 
-        Button join_btn = (Button) findViewById(R.id.button5);
-        search_btn.setOnClickListener(new View.OnClickListener() {
+        Button join_btn = (Button) findViewById(R.id.join_button);
+        join_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, join_group.class));
             }
         });
+
+        ImageButton user_btn = (ImageButton) findViewById(R.id.user);
+        user_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserProfile.class));
+            }
+        });
+
     };
 
 

@@ -14,16 +14,16 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Create_hunt"
-            android:label="@string/title_activity_create_hunt">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Create_hunt"
+            android:label="@string/title_activity_create_hunt" />
         <activity
             android:name=".SignUpPage"
             android:label="@string/title_activity_sign_up_page" />
@@ -32,7 +32,13 @@
             android:label="@string/title_activity_login_page" />
         <activity
             android:name=".join_group"
-            android:label="@string/title_activity_join_group"></activity>
+            android:label="@string/title_activity_join_group" />
+        <activity
+            android:name=".UserProfile"/>
+        <activity
+            android:name=".SearchGroups"
+            android:label="search_my_group_pal" />
+
     </application>
 
 </manifest>
