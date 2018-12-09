@@ -7,17 +7,44 @@
     tools:context="com.dragonhunt.PinCodeDisplay">
 
     <TextView
-        android:id="@+id/pinCodeDisplay"
+        android:id="@+id/pinMessage"
         android:layout_width="wrap_content"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:text="Use this code to invite friends:"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/pinCodeDisplay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:id="@+id/pinCodeDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="192dp"
+        android:ems="10"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,6 +63,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pinCodeDisplay"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.278" />
 
 </android.support.constraint.ConstraintLayout>
