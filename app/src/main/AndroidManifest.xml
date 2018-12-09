@@ -12,24 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.dragonhunt.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name="com.dragonhunt.Create_hunt"
             android:label="@string/title_activity_create_hunt">
         </activity>
         <activity
             android:name="com.dragonhunt.SignUpPage"
-            android:label="@string/title_activity_sign_up_page" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_sign_up_page">
         </activity>
         <activity
             android:name="com.dragonhunt.LoginPage"
-            android:label="@string/title_activity_login_page"/>
+            android:label="@string/title_activity_login_page">
+        <intent-filter >
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
     </application>
 

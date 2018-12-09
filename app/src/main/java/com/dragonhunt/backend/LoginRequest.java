@@ -1,8 +1,11 @@
 package com.dragonhunt.backend;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 
-import com.dragonhunt.SignUpPage;
+import com.dragonhunt.LoginPage;
+
 
 public class LoginRequest extends HttpRequest {
 
@@ -21,7 +24,7 @@ public class LoginRequest extends HttpRequest {
 
     @Override
     public boolean issueRequest() {
-        if (parameters.size() != 4) {
+        if (parameters.size() != 2) {
             return false;
         }
         return super.issueRequest();
@@ -30,10 +33,16 @@ public class LoginRequest extends HttpRequest {
     @Override
     protected void onPostExecute(String result) {
         if (wasSuccessful()) {
-            ((SignUpPage)activity).setMessage("Registration successful.");
+            SharedPreferences preferences = activity.getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("username", parameters.get("username"));
+            editor.apply();
+
+            ((LoginPage)activity).setMessage("Login successful.");
+
         }
         else {
-            ((SignUpPage)activity).setMessage(getMessage());
+            ((LoginPage)activity).setMessage(getMessage());
         }
     }
 

@@ -78,14 +78,13 @@ public class SignUpPage extends AppCompatActivity {
         if (passwordInput.getText().toString().length() < 8) {
             allValid = false;
         }
-        String message = "";
+
         if (allValid) {
             createNewUser();
         }
         else {
-            message = "Please fill all the fields. Username must be at least 5 characters long, and password at least 8.";
+            mTextMessage.setText("Please fill all the fields. Username must be at least 5 characters long, and password at least 8.");
         }
-        mTextMessage.setText(message);
     }
 
     private void createNewUser() {
