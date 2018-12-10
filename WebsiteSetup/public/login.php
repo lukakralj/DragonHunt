@@ -24,7 +24,7 @@ if (is_post_request()) {
 }
 else {
     $response["success"] = 0;
-    $response["message"] = "Invalid request.";
+    $response["message"] = INVALID_REQUEST;
     echo json_encode($response);
 }
 

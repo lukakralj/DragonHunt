@@ -28,7 +28,9 @@
         android:layout_marginTop="42dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Title"
+        android:hint="Title"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/Description"
         app:layout_constraintStart_toEndOf="@+id/message"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +44,9 @@
         android:layout_marginRight="2dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Task"
+        android:hint="Task"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/Location"
         app:layout_constraintEnd_toEndOf="@+id/Title"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
@@ -56,7 +60,9 @@
         android:layout_marginStart="2dp"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="Location"
+        android:hint="Location"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/minParticipants"
         app:layout_constraintStart_toStartOf="@+id/Description"
         app:layout_constraintTop_toBottomOf="@+id/Description" />
@@ -70,7 +76,9 @@
     android:layout_marginStart="2dp"
     android:ems="10"
     android:inputType="textPostalAddress"
-    android:text="Min num of participants"
+    android:hint="Min num of participants"
+    android:textColor="@android:color/black"
+    android:textColorHint="@android:color/darker_gray"
     app:layout_constraintBottom_toTopOf="@+id/isPrivate"
     app:layout_constraintStart_toStartOf="@+id/Location"
     app:layout_constraintTop_toBottomOf="@+id/Location" />
@@ -84,7 +92,9 @@
         android:layout_marginStart="2dp"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="is private? (enter 1/0)"
+        android:hint="is private? (true/false)"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/createHunt"
         app:layout_constraintStart_toStartOf="@+id/minParticipants"
         app:layout_constraintTop_toBottomOf="@+id/minParticipants" />
@@ -95,18 +105,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:text="Create Hunt"
-        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="@+id/isPrivate"
         app:layout_constraintTop_toBottomOf="@+id/isPrivate" />
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toEndOf="@+id/createHunt"
-        app:layout_constraintTop_toBottomOf="@+id/createHunt" />
 
 
 </android.support.constraint.ConstraintLayout>

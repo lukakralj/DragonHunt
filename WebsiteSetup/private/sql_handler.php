@@ -39,6 +39,16 @@ function insert_new_challenge($title, $task, $location, $owner, $minParticipants
                         . db_escape($db, $isPrivate) . "')";
 
     $result = mysqli_query($db, $sql);
+
+    if (!$result) {
+        return $result;
+    }
+
+    $sql = "INSERT INTO OngoingChallenges (challengeId) ";
+    $sql .= "VALUES ('" . db_escape($db, mysqli_insert_id($db)) . "')";
+
+    $result = mysqli_query($db, $sql);
+
     return $result;
 }
 
@@ -60,5 +70,74 @@ function valid_credentials($username, $password) {
     mysqli_free_result($result);
 
     return $hashed_password == $password;
+}
+
+function get_ongoing_challenge_by_id($id) {
+    global $db;
+
+    $sql = "SELECT * FROM OngoingChallenges NATURAL JOIN Challenges ";
+    $sql .= "WHERE id='" . db_escape($db, $id). "'";
+
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+
+    $row = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+
+    return $row;
+}
+
+function is_valid_ongoing_id($id) {
+    global $db;
+
+    $sql = "SELECT COUNT(*) AS valid FROM OngoingChallenges ";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
+
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    // Return result set - remember to free memory
+    $isValid = (mysqli_fetch_assoc($result)["valid"] > 0);
+    mysqli_free_result($result);
+    return $isValid;
+}
+
+function get_existing_participation($username, $id) {
+    global $db;
+
+    $sql = "SELECT * FROM OngoingChallenges INNER JOIN Challenges ON OngoingChallenges.challengeId=Challenges.challengeId INNER JOIN Participation ON Participation.ongoingId=OngoingChallenges.id ";
+    $sql .= "WHERE username='" . db_escape($db, $username) . "' AND id='" . db_escape($db, $id) . "'";
+
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+
+    if (mysqli_num_rows($result) == 0) {
+        mysqli_free_result($result);
+        return NULL;
+    }
+    $row = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+
+    return $row;
+}
+
+function get_participation($username, $id) {
+    global $db;
+
+    $challenge = get_existing_participation($username, $id);
+    if (!is_null($challenge)) {
+        return $challenge;
+    }
+
+    $sql = "INSERT INTO Participation ";
+    $sql .= "VALUES ('" . db_escape($db, $username) . "', '" . db_escape($db, $id) . "')";
+
+    $result = mysqli_query($db, $sql);
+
+    if (!$result) {
+        return NULL;
+    }
+
+    return get_existing_participation($username, $id);
+
 }
  ?>

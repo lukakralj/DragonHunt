@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.dragonhunt.backend.DatabaseManager;
 import com.dragonhunt.backend.NewChallengeRequest;
 
 
@@ -25,7 +26,7 @@ public class Create_hunt extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requireLogin();
+        DatabaseManager.requireLogin(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_hunt);
 
@@ -43,27 +44,6 @@ public class Create_hunt extends AppCompatActivity {
                 handleCreateHunt(v);
             }
         });
-
-        final Button logoutButton = (Button) findViewById(R.id.logoutButton);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("===== Logging out.");
-                SharedPreferences preferences = getSharedPreferences("Settings", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.remove("username");
-                editor.apply();
-                requireLogin();
-            }
-        });
-    }
-
-    private void requireLogin() {
-        SharedPreferences preferences = getSharedPreferences("Settings", Context.MODE_PRIVATE);
-        if (!preferences.contains("username")) {
-            // no user is logged in
-            Intent intent = new Intent(this, LoginPage.class);
-            startActivity(intent);
-        }
     }
 
     private void handleCreateHunt(View v) {
@@ -88,7 +68,7 @@ public class Create_hunt extends AppCompatActivity {
             // not a number
             allValid = false;
         }
-        if (!(isPrivate.getText().toString().trim().equals("1") || isPrivate.getText().toString().trim().equals("0"))) {
+        if (!(isPrivate.getText().toString().trim().equals("true") || isPrivate.getText().toString().trim().equals("false"))) {
             allValid = false;
         }
 
@@ -111,6 +91,7 @@ public class Create_hunt extends AppCompatActivity {
             throw new RuntimeException("No username was stored in the preferences, but new hunt tried to be created.");
         }
         newChallenge.setChallengeOwner(username);
+        String isPr = isPrivate.getText().toString().trim().equals("true") ? "1" : "0";
         newChallenge.setIsPrivate(isPrivate.getText().toString().trim());
         newChallenge.setMinParticipants(minParticipants.getText().toString().trim());
 

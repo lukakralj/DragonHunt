@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 
 import com.dragonhunt.Create_hunt;
 import com.dragonhunt.LoginPage;
+import com.dragonhunt.MainActivity;
 
 
 public class LoginRequest extends HttpRequest {
@@ -41,7 +42,7 @@ public class LoginRequest extends HttpRequest {
             editor.apply();
 
             ((LoginPage)activity).setMessage("Login successful.");
-            Intent intent = new Intent(activity, Create_hunt.class);
+            Intent intent = new Intent(activity, MainActivity.class);
             activity.startActivity(intent);
         }
         else {
