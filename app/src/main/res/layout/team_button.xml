@@ -3,13 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="100dp">
 
+
     <LinearLayout
+        android:id="@+id/fakeBttn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/border"
+        android:background="@android:drawable/list_selector_background"
         android:clickable="true"
+        android:clipToPadding="true"
         android:orientation="horizontal">
 
         <TextView
@@ -17,10 +20,8 @@
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/testimage1"
-            android:text="GroupName"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -37,5 +38,6 @@
             android:textStyle="bold|italic"/>
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

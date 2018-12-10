@@ -9,4 +9,5 @@
     <string name="title_activity_login_page">LoginPage</string>
     <string name="memberlist"><u>Member List</u></string>
     <string name="title_activity_join_group">join_group</string>
+    <string name="styled_stats">\n\n\n\n<b>Completed Challenges</b>\n\t\t\t\t219\n<b>Active Members</b>\n\t\t\t\t1/3\n<b>Distance</b>\n\t\t\t\t0.21km</string>
 </resources>

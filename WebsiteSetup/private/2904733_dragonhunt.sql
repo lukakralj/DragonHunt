@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: fdb24.awardspace.net
--- Generation Time: Dec 08, 2018 at 07:32 PM
+-- Generation Time: Dec 09, 2018 at 12:09 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.5.38
 
@@ -57,19 +57,7 @@ CREATE TABLE `OngoingChallenges` (
 
 CREATE TABLE `Participation` (
   `username` varchar(255) NOT NULL,
-  `ongoingId` int(11) NOT NULL,
-  `teamId` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Teams`
---
-
-CREATE TABLE `Teams` (
-  `teamId` int(11) NOT NULL,
-  `teamName` varchar(255) DEFAULT NULL
+  `ongoingId` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -108,14 +96,7 @@ ALTER TABLE `OngoingChallenges`
 --
 ALTER TABLE `Participation`
   ADD PRIMARY KEY (`username`,`ongoingId`),
-  ADD KEY `ongoingId` (`ongoingId`),
-  ADD KEY `teamId` (`teamId`);
-
---
--- Indexes for table `Teams`
---
-ALTER TABLE `Teams`
-  ADD PRIMARY KEY (`teamId`);
+  ADD KEY `ongoingId` (`ongoingId`);
 
 --
 -- Indexes for table `Users`
@@ -131,12 +112,12 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for table `Challenges`
 --
 ALTER TABLE `Challenges`
-  MODIFY `challengeId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `challengeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `OngoingChallenges`
 --
 ALTER TABLE `OngoingChallenges`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

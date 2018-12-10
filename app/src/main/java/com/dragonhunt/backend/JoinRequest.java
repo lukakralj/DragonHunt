@@ -1,6 +1,9 @@
 package com.dragonhunt.backend;
 
 import android.app.Activity;
+import android.content.Intent;
+
+import com.dragonhunt.ChallengeView;
 import com.dragonhunt.join_group;
 
 import org.json.JSONException;
@@ -48,15 +51,12 @@ public class JoinRequest extends HttpRequest {
         if (wasSuccessful()) {
             ((join_group)activity).setMessage("Join successful.");
             System.out.println("===== Redirecting to challenge page.");
-            /*Intent intent = new Intent(activity, MainActivity.class);
-            activity.startActivity(intent);*/
+            ChallengeView.challenge = challenge;
+            Intent intent = new Intent(activity, ChallengeView.class);
+            activity.startActivity(intent);
         }
         else {
             ((join_group)activity).setMessage(getMessage());
         }
-    }
-
-    public JSONObject getChallenge() {
-        return challenge;
     }
 }

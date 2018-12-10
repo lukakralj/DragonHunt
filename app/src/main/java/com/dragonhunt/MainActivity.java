@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import com.dragonhunt.backend.DatabaseManager;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
