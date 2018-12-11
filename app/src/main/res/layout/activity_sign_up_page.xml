@@ -26,7 +26,7 @@
         android:layout_marginTop="42dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintStart_toEndOf="@+id/message"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +37,7 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Surname"
+        android:hint="Surname"
         app:layout_constraintStart_toStartOf="@+id/signUpName"
         app:layout_constraintTop_toBottomOf="@+id/signUpName" />
 
@@ -48,7 +48,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Username"
+        android:hint="Username"
         app:layout_constraintStart_toStartOf="@+id/signUpSurname"
         app:layout_constraintTop_toBottomOf="@+id/signUpSurname" />
 
@@ -59,7 +59,7 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Password"
+        android:hint="Password"
         app:layout_constraintStart_toStartOf="@+id/signUpUsername"
         app:layout_constraintTop_toBottomOf="@+id/signUpUsername" />
 

@@ -102,9 +102,5 @@ public class Create_hunt extends AppCompatActivity {
         mTextMessage.setText(message);
     }
 
-    @Override
-    public void onBackPressed() {
-        // do nothing...
-    }
 
 }
